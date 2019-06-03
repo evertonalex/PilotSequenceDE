@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import itertools
 import time
+import DiferencialEvolutionAlocation
 
 ########################################################################################################################
 # To do List
@@ -245,6 +246,14 @@ for i in range(0, len(B)):
 p_min = -40 #dBm
 
 allocatingPilotSequence(K, Tp)
+
+cons_mutation = 0.7
+cons_cross = 0.7
+cons_population = 15
+cons_iterations = 500
+cons_limitations = [(0, 2000)]
+sigma = N0*Bmax
+DiferencialEvolutionAlocation.DifferentialEvolution(cons_limitations, cons_mutation, cons_cross, cons_population, cons_iterations, phi, beta, sigma)
 
 
 plt.show()
